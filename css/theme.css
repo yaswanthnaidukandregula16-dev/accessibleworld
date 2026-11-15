@@ -1,0 +1,352 @@
+/* =================================
+   THEME TOGGLE (light / dark)
+   Light mode is the default styling in style.css.
+   Dark mode overrides apply when <html data-theme="dark">.
+================================= */
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 38px;
+    padding: 8px 13px;
+    border: 1px solid rgba(8, 127, 120, 0.22);
+    border-radius: 12px;
+    background: #eef8f5;
+    color: #0b6f68;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s, color .2s, border-color .2s, transform .2s;
+    flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px);
+    border-color: #0b9b8e;
+}
+
+.theme-toggle:focus-visible {
+    outline: 3px solid #0b9b8e;
+    outline-offset: 2px;
+}
+
+.theme-toggle-icon {
+    font-size: 16px;
+    line-height: 1;
+}
+
+@media (max-width: 600px) {
+    .theme-toggle-label {
+        display: none;
+    }
+}
+
+/* ---------- Dark mode ---------- */
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+    --text: #e4efec;
+    --muted: #9fb3b0;
+    --white: #15262a;
+    --light-green: #173a35;
+    --green: #2fc4a4;
+    --dark-green: #5fd8bc;
+    --aw-ink: #e4efec;
+    --aw-line: #26403f;
+    --aw-shadow: 0 22px 65px rgba(0, 0, 0, .35);
+
+    --dk-bg: #0d1a1d;
+    --dk-bg-alt: #112226;
+    --dk-surface: #15262a;
+    --dk-surface-2: #1b3034;
+    --dk-border: #26403f;
+    --dk-heading: #eef6f4;
+    --dk-body: #a9bdba;
+    --dk-accent: #3fd0b2;
+}
+
+html[data-theme="dark"] body {
+    background: var(--dk-bg);
+    color: var(--text);
+}
+
+html[data-theme="dark"] .theme-toggle {
+    background: var(--dk-surface-2);
+    border-color: var(--dk-border);
+    color: #ffd76a;
+}
+
+/* Navigation */
+html[data-theme="dark"] .navbar {
+    background: rgba(13, 26, 29, .94);
+    border-bottom-color: var(--dk-border);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .3);
+}
+
+html[data-theme="dark"] .nav-links,
+html[data-theme="dark"] .nav-login {
+    color: var(--dk-body);
+}
+
+html[data-theme="dark"] .nav-links a:hover,
+html[data-theme="dark"] .nav-login:hover {
+    color: var(--dk-heading);
+}
+
+html[data-theme="dark"] .nav-profile {
+    background: var(--dk-surface-2);
+    border-color: var(--dk-border);
+    color: var(--dk-accent);
+}
+
+html[data-theme="dark"] .nav-profile:hover {
+    background: var(--green);
+    color: #0d1a1d;
+}
+
+/* Hero */
+html[data-theme="dark"] .hero {
+    background:
+        radial-gradient(ellipse at 80% 28%, rgba(20, 110, 96, .35), transparent 36%),
+        linear-gradient(120deg, #0f1f22 0%, #0d1a1d 58%, #10211f 100%);
+}
+
+html[data-theme="dark"] .hero h1,
+html[data-theme="dark"] .section-heading h2,
+html[data-theme="dark"] .map-heading h3,
+html[data-theme="dark"] .about-content h2,
+html[data-theme="dark"] .location-card h3,
+html[data-theme="dark"] .feature-card h3,
+html[data-theme="dark"] .search-text strong,
+html[data-theme="dark"] .access-card h3,
+html[data-theme="dark"] .details-card h1,
+html[data-theme="dark"] .details-card h2,
+html[data-theme="dark"] .register-card h1 {
+    color: var(--dk-heading);
+}
+
+html[data-theme="dark"] .hero h1 span,
+html[data-theme="dark"] .section-heading h2 span,
+html[data-theme="dark"] .about-content h2 span,
+html[data-theme="dark"] .about-link,
+html[data-theme="dark"] .hero-trust span,
+html[data-theme="dark"] .hero-spark,
+html[data-theme="dark"] .search-message,
+html[data-theme="dark"] .location-message,
+html[data-theme="dark"] .feature-list strong,
+html[data-theme="dark"] .detail-feature-card h3 {
+    color: var(--dk-accent);
+}
+
+html[data-theme="dark"] .hero-description,
+html[data-theme="dark"] .secondary-button,
+html[data-theme="dark"] .hero-note,
+html[data-theme="dark"] .hero-trust,
+html[data-theme="dark"] .scroll-cue,
+html[data-theme="dark"] .section-heading p,
+html[data-theme="dark"] .location-card p,
+html[data-theme="dark"] .feature-list li,
+html[data-theme="dark"] .feature-list small,
+html[data-theme="dark"] .feature-card p,
+html[data-theme="dark"] .feature-number,
+html[data-theme="dark"] .map-heading p,
+html[data-theme="dark"] .map-actions p,
+html[data-theme="dark"] .search-text span,
+html[data-theme="dark"] .about-content p,
+html[data-theme="dark"] .access-card p,
+html[data-theme="dark"] .card-bottom,
+html[data-theme="dark"] .footer p,
+html[data-theme="dark"] .copyright {
+    color: var(--dk-body);
+}
+
+html[data-theme="dark"] .visual-circle {
+    background: linear-gradient(145deg, #15403a, #102c2a);
+    box-shadow: inset -20px -20px 50px #0b2522;
+}
+
+html[data-theme="dark"] .visual-orbit {
+    border-color: rgba(63, 208, 178, .2);
+}
+
+html[data-theme="dark"] .access-card,
+html[data-theme="dark"] .floating-tag {
+    background: var(--dk-surface);
+    border-color: var(--dk-border);
+    color: var(--dk-body);
+    box-shadow: 0 28px 70px rgba(0, 0, 0, .4);
+}
+
+html[data-theme="dark"] .card-bottom {
+    border-top-color: var(--dk-border);
+}
+
+html[data-theme="dark"] .access-icon,
+html[data-theme="dark"] .live-pill,
+html[data-theme="dark"] .search-symbol,
+html[data-theme="dark"] .map-heading-icon,
+html[data-theme="dark"] .register-icon {
+    background: var(--dk-surface-2);
+    color: var(--dk-accent);
+}
+
+/* Explore / search / map */
+html[data-theme="dark"] .explore-section {
+    background: var(--dk-bg);
+}
+
+html[data-theme="dark"] .location-card,
+html[data-theme="dark"] .feature-card {
+    background: var(--dk-surface);
+    border-color: var(--dk-border);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, .25);
+}
+
+html[data-theme="dark"] .location-card:hover {
+    border-color: #2f5a55;
+}
+
+html[data-theme="dark"] .search-panel {
+    background: linear-gradient(115deg, #132428, var(--dk-surface));
+    border-color: var(--dk-border);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, .3);
+}
+
+html[data-theme="dark"] .search-panel input,
+html[data-theme="dark"] .form-group input,
+html[data-theme="dark"] .profile-edit-form input,
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea {
+    background: var(--dk-bg-alt);
+    border-color: var(--dk-border);
+    color: var(--dk-heading);
+}
+
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder {
+    color: #6f8784;
+}
+
+html[data-theme="dark"] .map-actions {
+    background: var(--dk-surface);
+    border-color: var(--dk-border);
+}
+
+html[data-theme="dark"] #locations-map {
+    border-color: var(--dk-border);
+    background: var(--dk-bg-alt);
+}
+
+/* Darken OpenStreetMap tiles so the map matches the theme */
+html[data-theme="dark"] .leaflet-tile-pane {
+    filter: invert(1) hue-rotate(180deg) brightness(.92) contrast(.9);
+}
+
+html[data-theme="dark"] .leaflet-popup-content-wrapper,
+html[data-theme="dark"] .leaflet-popup-tip {
+    background: var(--dk-surface);
+    color: var(--text);
+}
+
+html[data-theme="dark"] .leaflet-control-attribution {
+    background: rgba(13, 26, 29, .8);
+    color: var(--dk-body);
+}
+
+html[data-theme="dark"] .leaflet-control-attribution a {
+    color: var(--dk-accent);
+}
+
+/* Features */
+html[data-theme="dark"] .features-section {
+    background: linear-gradient(180deg, #0f1f22, #0d1a1d);
+}
+
+html[data-theme="dark"] .green  { background: #143a2a; color: #5fd69a; }
+html[data-theme="dark"] .blue   { background: #16294a; color: #7fb0f0; }
+html[data-theme="dark"] .orange { background: #3a2814; color: #f0a862; }
+html[data-theme="dark"] .purple { background: #2a1f45; color: #b598ee; }
+
+/* Footer */
+html[data-theme="dark"] .footer {
+    background: var(--dk-bg-alt);
+    border-top-color: var(--dk-border);
+}
+
+/* Login / register */
+html[data-theme="dark"] .register-page {
+    background: linear-gradient(135deg, #0f1f22, #0d1a1d);
+}
+
+html[data-theme="dark"] .register-card,
+html[data-theme="dark"] .details-card {
+    background: var(--dk-surface);
+    border-color: var(--dk-border);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, .35);
+}
+
+html[data-theme="dark"] .register-submit {
+    color: #0d1a1d;
+}
+
+html[data-theme="dark"] .register-message.success {
+    background: #143a2f;
+    color: #6fe0c0;
+}
+
+html[data-theme="dark"] .register-message.error {
+    background: #3a1a1a;
+    color: #ff9a8f;
+}
+
+/* Location details, admin, my reports */
+html[data-theme="dark"] .details-main {
+    background: var(--dk-bg);
+}
+
+html[data-theme="dark"] .details-divider {
+    background: var(--dk-border);
+}
+
+html[data-theme="dark"] .detail-feature-card,
+html[data-theme="dark"] .report-card {
+    background: var(--dk-surface-2);
+    border-color: var(--dk-border);
+    color: var(--text);
+}
+
+html[data-theme="dark"] .report-status.pending  { background-color: #3a3014; color: #f3d27a; }
+html[data-theme="dark"] .report-status.approved { background-color: #143a24; color: #7fe0a4; }
+html[data-theme="dark"] .report-status.rejected { background-color: #3a1a1e; color: #ff9aa5; }
+
+/* Profile page */
+html[data-theme="dark"] .profile-card,
+html[data-theme="dark"] .report-stat-card {
+    background: var(--dk-surface);
+    border-color: var(--dk-border);
+}
+
+html[data-theme="dark"] .profile-divider {
+    background: var(--dk-border);
+}
+
+html[data-theme="dark"] .profile-edit,
+html[data-theme="dark"] .profile-edit-form {
+    background: var(--dk-surface-2);
+    border-color: var(--dk-border);
+}
+
+html[data-theme="dark"] .profile-cancel-button,
+html[data-theme="dark"] .profile-reports-link {
+    background: var(--dk-bg-alt);
+    border-color: var(--dk-border);
+    color: var(--dk-heading);
+}
+
+html[data-theme="dark"] .stat-icon.total    { background: #143a2f; color: #6fe0c0; }
+html[data-theme="dark"] .stat-icon.pending  { background: #3a3014; color: #f3d27a; }
+html[data-theme="dark"] .stat-icon.approved { background: #143a24; color: #7fe0a4; }
+html[data-theme="dark"] .stat-icon.rejected { background: #3a1a1e; color: #ff9a8f; }
